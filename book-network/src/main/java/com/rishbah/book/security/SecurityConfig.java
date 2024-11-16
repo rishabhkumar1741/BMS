@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfig {
 
-    private JwtFilter jwtAuthFilter;
+    private JwtFilter jwtauthFilter;
     private final AuthenticationProvider authenticationProvider;
 
     @Bean
@@ -43,7 +43,7 @@ public class SecurityConfig {
                                 .authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtauthfilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtauthFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
 
